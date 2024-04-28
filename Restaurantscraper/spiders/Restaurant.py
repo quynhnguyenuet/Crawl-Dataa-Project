@@ -5,7 +5,7 @@ from scrapy.http import Request
 class RestaurantSpider(scrapy.Spider):
     name = "Restaurant"
     allowed_domains = ["www.yelp.com"]
-    start_urls = ["https://www.yelp.com/search?find_desc=Restaurants&find_loc=San+Francisco%2C+CA&start=10"]
+    start_urls = ["https://www.yelp.com/search?find_desc=Restaurants&find_loc=San+Francisco%2C+CA&start=0"]
     def start_requests(self):
         for url in self.start_urls:
             yield Request(url=url, callback=self.parse)
